@@ -1,0 +1,26 @@
+{
+  "name": "mongo-scrapper",
+  "version": "1.0.0",
+  "description": "an app that will scrape a news page and display so that users can comment on the latest news",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiongkb/Mongo-scrapper.git"
+  },
+  "author": "xiongkb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiongkb/Mongo-scrapper/issues"
+  },
+  "homepage": "https://github.com/xiongkb/Mongo-scrapper#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "mongoose": "^5.9.7"
+  }
+}
