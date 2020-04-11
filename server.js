@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
-
+// const routes = require("./routing/routes");
 // initializing express
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -18,10 +18,11 @@ app.set("view engine", "handlebars");
 
 // connecting to routings and mongoDB
 require("./routing/routes")(app);
-mongoose.connect("mongodb://localhost/unit18Populator", {useNewUrlParser: true, useUnifiedTopology: true});
+// app.use(routes);
+mongoose.connect("mongodb://localhost/FFXIVscraper", {useNewUrlParser: true});
 
 
 // listen
 app.listen(PORT, function() {
-    console.log("App listening on port " + PORT)
+    console.log("App listening on port " + PORT);
 });
