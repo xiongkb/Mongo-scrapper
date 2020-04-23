@@ -2,7 +2,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
-// const routes = require("./routing/routes");
+const cheerio = require("cheerio");
+const axios = require("axios");
+
 // initializing express
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -18,8 +20,7 @@ app.set("view engine", "handlebars");
 
 // connecting to routings and mongoDB
 require("./routing/routes")(app);
-// app.use(routes);
-mongoose.connect("mongodb://localhost/FFXIVscraper", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost/FFXIVscraper", {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 // listen
