@@ -2,10 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
-const cheerio = require("cheerio");
-const axios = require("axios");
 
-// initializing express
+// initializing express and middlewares
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -25,5 +23,5 @@ mongoose.connect("mongodb://localhost/FFXIVscraper", {useNewUrlParser: true, use
 
 // listen
 app.listen(PORT, function() {
-    console.log("App listening on port " + PORT);
+    console.log("App listening on localhost:" + PORT);
 });
