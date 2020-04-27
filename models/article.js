@@ -15,10 +15,10 @@ let articleSchema = new Schema({
         type: String,
         required: true
     },
-    // comment: {
-    //     type: Schema.types.ObjectId,
-    //     ref: "comment"
-    // }
+    comment: {
+        type: Schema.Types.ObjectId,
+        ref: "Comment"
+    }
 });
 
 let Article = mongoose.model("Article", articleSchema);
