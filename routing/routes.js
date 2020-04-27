@@ -63,12 +63,13 @@ module.exports = function(app) {
     // updating the comment associated with the article
     app.post("/articles/:id", function(req, res) {
         console.log(req.body);
-        db.Comments.create(req.body).then(function(data) {
-            return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: data._id }, { new: true });
-        }).then(function(data) {
-            res.json(data);
-        }).catch(function(err) {
-            res.json(err);
-        });
+        db.Comment.create(req.body)
+            .then(function(data) {
+            return db.Article.findOneAndUpdate({ _id: req.params.id }, { comment: data._id }, { new: true });
+            }).then(function(data) {
+                res.json(data);
+            }).catch(function(err) {
+                res.json(err);
+            });
     });
 };

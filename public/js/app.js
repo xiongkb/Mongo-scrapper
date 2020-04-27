@@ -49,22 +49,20 @@ function display() {
 
         // saving the note
         $(".add-comment").on("click", function() {
-            $(".comment-body").empty();
+            // $(".comment-body").empty();
             let id = $(this).data("id");
-            console.log("comment id: " + id);
             $.ajax("/articles/" + id, {type: "GET"})
                 .then(function(data) {
-                    console.log("Notes:\n" + data.comment);
+                    console.log('t1');
+                    console.log(data.comment.body);
+                    //console.log("Notes:\n" + data.comments);
                     if(data.comment) {
-                        $(".comment-body").val(data.comment.body);
+                        $(`.comment-body[data-id="${id}"]`).val(data.comment.body);
                     }
                 })
         });
         $(".save").on("click", function() {
             let id = $(this).data("id");
-            console.log('t1');
-            console.log($(`.comment-body[data-id="${id}"]`).val());
-            console.log("saved id: " + id);
             $.ajax({
                 method: "POST",
                 url: "/articles/" + id,
